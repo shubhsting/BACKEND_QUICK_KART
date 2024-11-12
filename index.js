@@ -14,7 +14,7 @@ const addressRoutes=require('./routes/Address')
 const reviewRoutes=require("./routes/Review")
 const wishlistRoutes=require("./routes/Wishlist")
 const { connectToDB } = require("./database/db")
-
+const port = process.env.PORT || 8000;
 
 // server init
 const server=express()
@@ -47,6 +47,6 @@ server.get("/",(req,res)=>{
     res.status(200).json({message:'running'})
 })
 
-server.listen(8000,()=>{
+server.listen(port,()=>{
     console.log('server [STARTED] ~ http://localhost:8000');
 })
